@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karem Ben Chikha</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --card: #141416;
+    --border: #1f1f23;
+    --text: #e4e4e7;
+    --muted: #71717a;
+    --accent: #3b82f6;
+    --accent-dim: #1d4ed8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 680px; margin: 0 auto; padding: 48px 24px; }
+  .avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin-bottom: 16px;
+  }
+  h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .location { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  .location::before { content: "📍 "; }
+  .tagline {
+    font-size: 16px; color: var(--muted);
+    margin-bottom: 24px; padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tagline strong { color: var(--text); }
+  .bio {
+    font-size: 15px; color: var(--muted);
+    margin-bottom: 32px; line-height: 1.7;
+  }
+  .bio a { color: var(--accent); text-decoration: none; }
+  .bio a:hover { text-decoration: underline; }
+  .social {
+    display: flex; gap: 12px; margin-bottom: 40px;
+  }
+  .social a {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--card); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); text-decoration: none;
+    transition: all 0.2s; font-size: 18px;
+  }
+  .social a:hover {
+    border-color: var(--accent); color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .section-title {
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .category-label {
+    font-size: 12px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted);
+    margin: 32px 0 12px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .projects { display: flex; flex-direction: column; gap: 8px; }
+  .project {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; border-radius: 12px;
+    background: var(--card); border: 1px solid var(--border);
+    text-decoration: none; color: inherit;
+    transition: all 0.2s;
+  }
+  .project:hover {
+    border-color: var(--accent); transform: translateY(-1px);
+  }
+  .project-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .project-info { flex: 1; min-width: 0; }
+  .project-name { font-size: 14px; font-weight: 600; }
+  .project-desc {
+    font-size: 13px; color: var(--muted);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .project-stat {
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    flex-shrink: 0;
+  }
+  .stats-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 8px; margin-bottom: 40px;
+  }
+  .stat-card {
+    text-align: center; padding: 16px; border-radius: 12px;
+    background: var(--card); border: 1px solid var(--border);
+  }
+  .stat-number { font-size: 20px; font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  footer {
+    text-align: center; padding: 40px 0 0;
+    font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--border); margin-top: 40px;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+  @media (max-width: 500px) {
+    .container { padding: 32px 16px; }
+    h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="avatar">⚡</div>
+  <h1>Karem Ben Chikha</h1>
+  <div class="location">Montreal, Quebec, Canada</div>
+  <div class="tagline">
+    <strong>Propulsion Systems Engineer</strong> &middot; AI & Machine Learning &middot; Algorithmic Trading
+  </div>
+  <div class="bio">
+    Hydrogen and hybrid propulsion engineer at <a href="https://mtls-aerostructure.com">MTLS Aerostructure</a>.
+    Building intelligent systems across aerospace, AI, and finance.
+    Masters in Electrical Engineering from <a href="https://www.uqtr.ca">UQTR</a>.
+  </div>
+
+  <div class="social">
+    <a href="https://github.com/KaremBenChikha" title="GitHub">GH</a>
+    <a href="https://linkedin.com/in/karem-ben-chikha" title="LinkedIn">in</a>
+    <a href="https://www.hackster.io/karem_benchikha" title="Hackster">H</a>
+    <a href="mailto:karem.ben.chikha@uqtr.ca" title="Email">@</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-number">10+</div>
+      <div class="stat-label">Public Repos</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Projects</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">10</div>
+      <div class="stat-label">Followers</div>
+    </div>
+  </div>
+
+  <div class="section-title">Projects</div>
+
+  <div class="category-label">Control & Automation</div>
+  <div class="projects">
+    <a class="project" href="https://github.com/KaremBenChikha/SmartAquarium">
+      <div class="project-icon" style="background:#1e3a5f;">🐟</div>
+      <div class="project-info">
+        <div class="project-name">SmartAquarium</div>
+        <div class="project-desc">IoT aquarium monitoring & control via ESP32</div>
+      </div>
+      <div class="project-stat">3 ★</div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/BallandBeam">
+      <div class="project-icon" style="background:#1e3a5f;">⚙️</div>
+      <div class="project-info">
+        <div class="project-name">Ball & Beam</div>
+        <div class="project-desc">PID control on Arduino with LabView</div>
+      </div>
+      <div class="project-stat">1 ★</div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/AGVHybride">
+      <div class="project-icon" style="background:#1e3a5f;">🤖</div>
+      <div class="project-info">
+        <div class="project-name">AGVHybride</div>
+        <div class="project-desc">ROS navigation stack for hybrid AGV</div>
+      </div>
+      <div class="project-stat">1 ★</div>
+    </a>
+  </div>
+
+  <div class="category-label">AI & Computer Vision</div>
+  <div class="projects">
+    <a class="project" href="https://github.com/KaremBenChikha/FaceMaskDetection">
+      <div class="project-icon" style="background:#3b1f4e;">😷</div>
+      <div class="project-info">
+        <div class="project-name">FaceMaskDetection</div>
+        <div class="project-desc">CNN to detect face masks with 98% accuracy</div>
+      </div>
+      <div class="project-stat">7 ★</div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/ObjectDetectionWithYOLO">
+      <div class="project-icon" style="background:#3b1f4e;">👁️</div>
+      <div class="project-info">
+        <div class="project-name">ObjectDetectionWithYOLO</div>
+        <div class="project-desc">Real-time object detection with YOLOv3</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/ImageClassificationWithSageMaker">
+      <div class="project-icon" style="background:#3b1f4e;">☁️</div>
+      <div class="project-info">
+        <div class="project-name">ImageClassificationWithSageMaker</div>
+        <div class="project-desc">Image classification on AWS SageMaker</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/SimpleImageClassification">
+      <div class="project-icon" style="background:#3b1f4e;">📷</div>
+      <div class="project-info">
+        <div class="project-name">SimpleImageClassification</div>
+        <div class="project-desc">Fashion MNIST classifier with TensorFlow</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+  </div>
+
+  <div class="category-label">Trading & Finance</div>
+  <div class="projects">
+    <a class="project" href="https://github.com/KaremBenChikha/stoxx">
+      <div class="project-icon" style="background:#1e3a2f;">📈</div>
+      <div class="project-info">
+        <div class="project-name">stoxx</div>
+        <div class="project-desc">Flagship trading platform & strategy engine</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/CryptoTaxProject">
+      <div class="project-icon" style="background:#1e3a2f;">₿</div>
+      <div class="project-info">
+        <div class="project-name">CryptoTaxProject</div>
+        <div class="project-desc">Crypto tax calculator for CRA compliance</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/TradingBot">
+      <div class="project-icon" style="background:#1e3a2f;">🤖</div>
+      <div class="project-info">
+        <div class="project-name">TradingBot</div>
+        <div class="project-desc">Automated trading strategy execution</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+  </div>
+
+  <div class="category-label">Infrastructure & DevOps</div>
+  <div class="projects">
+    <a class="project" href="https://github.com/KaremBenChikha/Homelab">
+      <div class="project-icon" style="background:#1f1f2e;">🖥️</div>
+      <div class="project-info">
+        <div class="project-name">Homelab</div>
+        <div class="project-desc">Docker Compose infrastructure with NPM, Tailscale, Cloudflare</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/removed-project">
+      <div class="project-icon" style="background:#1f1f2e;">🔋</div>
+      <div class="project-info">
+        <div class="project-name">Removed project</div>
+        <div class="project-desc">Removed</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+  </div>
+
+  <div class="category-label">Dev Tools & AI</div>
+  <div class="projects">
+    <a class="project" href="https://github.com/KaremBenChikha/claude-code-router">
+      <div class="project-icon" style="background:#2e1f3b;">🔀</div>
+      <div class="project-info">
+        <div class="project-name">Claude Code Router</div>
+        <div class="project-desc">Transparent proxy routing Claude Code to alternative models</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/claude-code-blueprint">
+      <div class="project-icon" style="background:#2e1f3b;">📘</div>
+      <div class="project-info">
+        <div class="project-name">Claude Code Blueprint</div>
+        <div class="project-desc">Opinionated setup guide for AI coding environments</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/polybrain-chat">
+      <div class="project-icon" style="background:#2e1f3b;">🧠</div>
+      <div class="project-info">
+        <div class="project-name">polybrain-chat</div>
+        <div class="project-desc">Next.js AI chat with Streamlit frontend</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+  </div>
+
+  <div class="category-label">Web & Full-Stack</div>
+  <div class="projects">
+    <a class="project" href="https://github.com/KaremBenChikha/EmsMarketplace">
+      <div class="project-icon" style="background:#2e2e1f;">🛒</div>
+      <div class="project-info">
+        <div class="project-name">EmsMarketplace</div>
+        <div class="project-desc">Full-stack marketplace (React, Node.js, MongoDB)</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+    <a class="project" href="https://github.com/KaremBenChikha/PersonalPortfolio">
+      <div class="project-icon" style="background:#2e2e1f;">🌐</div>
+      <div class="project-info">
+        <div class="project-name">PersonalPortfolio</div>
+        <div class="project-desc">Personal landing page with project showcase</div>
+      </div>
+      <div class="project-stat"></div>
+    </a>
+  </div>
+
+  <footer>
+    <a href="https://github.com/KaremBenChikha">github.com/KaremBenChikha</a>
+  </footer>
+</div>
+</body>
+</html>
